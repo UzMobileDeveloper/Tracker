@@ -25,6 +25,9 @@ object AppModule {
         RUNNING_DATABASE_NAME
     ).build()
 
+    @Singleton
+    @Provides
+    fun provideRunDao(db:RunningDataBase) = db.getRunDao()
 
 
 }
