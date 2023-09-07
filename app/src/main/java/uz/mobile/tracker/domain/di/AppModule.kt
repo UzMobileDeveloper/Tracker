@@ -5,14 +5,14 @@ import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
 import uz.mobile.tracker.data.local.room.database.RunningDataBase
 import uz.mobile.tracker.util.Constance.RUNNING_DATABASE_NAME
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ApplicationComponent::class)
 object AppModule {
 
     @Singleton
@@ -27,7 +27,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRunDao(db:RunningDataBase) = db.getRunDao()
+    fun provideRunDao(db: RunningDataBase) = db.getRunDao()
 
 
 }
